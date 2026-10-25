@@ -1,0 +1,23 @@
+2026-10-25 20:30:42,180 - INFO - Data processing started.
+2026-10-25 20:30:42,192 - INFO - Total records: 5
+2026-10-25 20:30:42,192 - INFO - Valid records: 3
+2026-10-25 20:30:42,193 - INFO - Invalid records: 2
+2026-10-25 20:30:42,193 - INFO - Data processing completed successfully.
+2026-10-25 20:32:05,217 - INFO - Data processing started.
+2026-10-25 20:32:05,230 - INFO - Total records: 5
+2026-10-25 20:32:05,231 - INFO - Valid records: 3
+2026-10-25 20:32:05,232 - INFO - Invalid records: 2
+2026-10-25 20:32:05,232 - INFO - Data processing completed successfully.
+2026-10-25 20:49:02,435 - INFO - Data processing started.
+2026-10-25 20:49:02,436 - ERROR - Data processing failed.
+Traceback (most recent call last):
+  File "C:\Users\M Susrutha\Desktop\ArrowStack_Intership\project1_data_automation\main.py", line 51, in main
+    records = read_json(INPUT_FILE)
+  File "C:\Users\M Susrutha\Desktop\ArrowStack_Intership\project1_data_automation\src\data_toolkit\processor.py", line 27, in read_json
+    raise FileNotFoundError(f"File not found: {path}")
+FileNotFoundError: File not found: data\customers.json
+2026-10-25 20:50:51,043 - INFO - Data processing started.
+2026-10-25 20:50:51,058 - INFO - Total records: 4
+2026-10-25 20:50:51,059 - INFO - Valid records: 2
+2026-10-25 20:50:51,059 - INFO - Invalid records: 2
+2026-10-25 20:50:51,059 - INFO - Data processing completed successfully.

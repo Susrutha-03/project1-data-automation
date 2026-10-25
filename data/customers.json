@@ -1,0 +1,7 @@
+
+[
+    {"customer_id": "201", "name": "Arun", "amount": 500},
+    {"customer_id": "202", "name": "Divya", "amount": 350},
+    {"customer_id": "203", "name": "", "amount": 200},
+    {"customer_id": "204", "name": "Rahul", "amount": -100}
+]

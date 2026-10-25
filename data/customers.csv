@@ -1,0 +1,6 @@
+customer_id,name,amount
+101,Ravi,250
+102,Anu,400
+103,,150
+104,Kiran,-50
+105,Sita,300
