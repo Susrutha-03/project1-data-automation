@@ -36,7 +36,8 @@ project1_data_automation/
 │   └── test_processor.py
 ├── main.py
 ├── README.md
-└── requirements.md
+├── requirements.md
+└── .gitignore
 ```
 
 ## 4. Requirements
@@ -46,27 +47,36 @@ project1_data_automation/
 
 Install pytest if necessary:
 
-```bash
+```powershell
 python -m pip install pytest
 ```
 
 ## 5. How to Run
 
-Open a terminal in the project root directory.
+Open PowerShell in the project root directory.
 
-Run the application with CSV input:
+### Run with CSV input
 
 ```powershell
 $env:INPUT_FILE = "data/customers.csv"
 python main.py
 ```
 
-Run the application with JSON input:
+### Run with JSON input
 
 ```powershell
 $env:INPUT_FILE = "data/customers.json"
 python main.py
 ```
+
+### Configure the output directory (optional)
+
+```powershell
+$env:OUTPUT_DIR = "output"
+python main.py
+```
+
+If `INPUT_FILE` is not set, the application uses `data/customers.csv` by default. If `OUTPUT_DIR` is not set, the application uses the project's `output` directory.
 
 ## 6. Output Files
 
@@ -78,16 +88,30 @@ The output files are overwritten each time the application runs.
 
 ## 7. Run Automated Tests
 
-From the project root:
+From the project root, run:
 
 ```powershell
 python -m pytest tests -q
 ```
 
-The tests cover record validation, record processing, CSV file errors, JSON reading, and invalid JSON input.
+The test suite covers record validation, record processing, missing CSV files, JSON reading, missing JSON files, malformed JSON, and invalid JSON structures.
 
 ## 8. Validation Rules
 
 1. Customer ID must not be empty.
 2. Customer name must not be empty.
-3. Amount
+3. Amount must be numeric.
+4. Amount must not be negative.
+
+Invalid records are excluded from the valid output and included in the exception report with explanations.
+
+## 9. Error Handling and Logging
+
+The application checks for missing input files and invalid JSON structures. Processing errors are logged in `output/process.log` and raised so that the failure can be identified.
+
+## 10. Current Limitations
+
+- The application currently processes customer records from CSV and JSON files.
+- Additional tests could cover missing CSV columns, empty files, and unusual data values.
+- Performance can be evaluated using larger datasets.
+- Future improvements could include stronger configuration management and more comprehensive documentation.
