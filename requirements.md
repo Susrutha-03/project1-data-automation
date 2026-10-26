@@ -16,7 +16,7 @@ Manual checking of business data can be time-consuming and can allow incorrect r
 
 ## 4. Functional Requirements
 
-1. Read input records from supported data files.
+1. Read input records from CSV and JSON files.
 2. Validate customer IDs and customer names.
 3. Check that amounts are numeric and non-negative.
 4. Separate valid records from invalid records.
@@ -29,15 +29,20 @@ Manual checking of business data can be time-consuming and can allow incorrect r
 
 ## 5. Input Data
 
-The current sample input is `data/customers.csv`.
+The project includes two sample input files:
 
-It contains these columns:
+- `data/customers.csv`
+- `data/customers.json`
+
+The CSV sample contains five customer records, including two intentionally invalid records.
+
+The JSON sample contains four customer records, including two intentionally invalid records.
+
+The customer records use these fields:
 
 - `customer_id`
 - `name`
 - `amount`
-
-The sample contains five customer records, including two intentionally invalid records.
 
 ## 6. Expected Outputs
 
@@ -47,9 +52,10 @@ The sample contains five customer records, including two intentionally invalid r
 
 ## 7. Quality and Acceptance Criteria
 
-- The sample dataset contains five records.
-- Three records pass validation.
-- Two records fail validation.
+- The CSV sample contains five records.
+- Three CSV records pass validation.
+- Two CSV records fail validation.
+- The JSON sample can also be processed.
 - Invalid records include a clear reason for rejection.
 - Missing input files are handled with an appropriate error.
 - Automated tests pass successfully.
@@ -58,14 +64,14 @@ The sample contains five customer records, including two intentionally invalid r
 ## 8. Technology Stack
 
 - Python
-- Python CSV and pathlib modules
-- Python logging module
-- Pytest
+- Python `csv`, `json`, and `pathlib` modules
+- Python `logging` module
+- pytest
 - Visual Studio Code
 
 ## 9. Current Limitations and Future Improvements
 
-- The current implementation processes CSV input. JSON input support remains to be implemented and tested.
-- Additional tests can cover malformed files, missing columns, empty files, and unusual data values.
+- The current implementation supports CSV and JSON input.
+- Additional tests can cover missing CSV columns, empty files, and unusual data values.
 - Performance can be evaluated using larger datasets.
 - The project can be extended with stronger configuration management and more comprehensive documentation.
